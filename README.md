@@ -323,34 +323,42 @@ NODE_ENV=production
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🆘 Troubleshooting
 
-### Common Issues
 
-**Backend won't start:**
-- Check MongoDB connection string
-- Ensure Node.js is installed
-- Verify port 4000 is not in use
+## **Demonstration video**: 
 
-**Frontend won't start:**
-- Run `npm install` to install dependencies
-- Check if backend is running on port 4000
-- Ensure port 5173 is available
+<a href="https://youtu.be/9et7klF9In0">Click me</a>
 
-**Database connection issues:**
-- Verify MongoDB Atlas connection string
-- Check network connectivity
-- Ensure database user has proper permissions
 
-**Authentication not working:**
-- Clear browser cookies
-- Check JWT secret is set
-- Verify backend and frontend are running
 
-### Support
 
-For support, please create an issue in the project repository or contact the development team.
 
----
+<br>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-**Built with ❤️ using modern web technologies**
+
+## <b>Connect with Me at</b>
+<br>
+<div align='center'>
+
+
+
+
+
+<a href="https://www.facebook.com/ashak.odree/" target="blank">
+<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="ashakuzzaman odree" height="30" width="40" /></a>
+
+
+<a href="https://www.instagram.com/ashak_odree/" target="blank">
+<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="ashak_odree" height="30" width="40" /></a>
+
+
+<a href="https://www.linkedin.com/in/ashak-odree/" target="blank">
+<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ashakuzzaman odree" height="30" width="40" /></a>
+
+
+<a href="https://twitter.com/ashak_odree" target="blank">
+<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="@ashak_odree" height="30" width="40" /></a>
+	
+<a href="https://www.youtube.com/channel/UC8_-lmRrTG990jkiQ7pFsUw" target="blank">
+<img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="Ashak Odree" height="30" width="40" /></a>	
