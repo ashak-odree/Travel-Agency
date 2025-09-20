@@ -159,17 +159,12 @@ node index.js
 npm run dev
 ```
 
-### Access the Application
 
-- **Main Application**: http://localhost:5173/
-- **Admin Login**: http://localhost:5173/login?admin=true
-- **Admin Signup**: http://localhost:5173/signup?admin=true
-- **Admin Dashboard**: http://localhost:5173/dashboard (after login)
 
 ### Demo Credentials
 ```
 Email: test@example.com
-Password: Test123!
+Password: For password DM to me.
 ```
 
 ## 📁 Project Structure
