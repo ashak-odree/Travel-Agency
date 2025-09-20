@@ -1,6 +1,6 @@
-# JourneyHub Admin Panel
+# Travel Agency Admin Panel
 
-A comprehensive full-stack admin dashboard for managing travel destinations and customer testimonials. Built with modern web technologies and featuring secure authentication, CRUD operations, and a professional user interface.
+A comprehensive full-stack travel agency admin dashboard for managing destinations and customer testimonials. Built with modern web technologies including React, TypeScript, Node.js, and MongoDB, featuring secure authentication, CRUD operations, and a professional user interface.
 
 ## 🚀 Features
 
@@ -16,7 +16,7 @@ A comprehensive full-stack admin dashboard for managing travel destinations and 
 ### Frontend Technologies
 - **React 18.3.1** - Modern React with hooks and functional components
 - **TypeScript** - Type-safe JavaScript development
-- **Vite 5.4.19** - Fast build tool and development server
+- **Vite 5.4.19** - Fast build tool and development server (runs on port 5173)
 - **Tailwind CSS** - Utility-first CSS framework
 - **shadcn/ui** - High-quality UI component library
 - **React Hook Form** - Performant forms with easy validation
@@ -80,6 +80,7 @@ DELETE /api/testimonials/:id    - Delete testimonial (protected)
 
 ### Prerequisites
 - **Node.js** (version 14 or higher)
+- **npm**, **yarn**, or **bun** (package manager)
 - **MongoDB Atlas account** or local MongoDB instance
 - **Git** (optional)
 
@@ -87,7 +88,7 @@ DELETE /api/testimonials/:id    - Delete testimonial (protected)
 ```bash
 # If using Git
 git clone <repository-url>
-cd journeyhub-admin-main
+cd "Travel Agency"
 
 # Or download and extract the project folder
 ```
@@ -123,19 +124,23 @@ Open a **new terminal** and run:
 
 ```bash
 # Navigate to main project directory
-cd journeyhub-admin-main
+cd "Travel Agency"
 
-# Install frontend dependencies
-npm install
+# Install frontend dependencies (choose one)
+npm install          # using npm
+# yarn install       # using yarn  
+# bun install        # using bun
 
-# Start development server
-npm run dev
+# Start development server (choose one)
+npm run dev          # using npm
+# yarn dev           # using yarn
+# bun run dev        # using bun
 ```
 
 **Expected Output:**
 ```
 VITE v5.4.19  ready in 500 ms
-➜  Local:   http://localhost:8080/
+➜  Local:   http://localhost:5173/
 ➜  Network: use --host to expose
 ```
 
@@ -156,10 +161,10 @@ npm run dev
 
 ### Access the Application
 
-- **Main Application**: http://localhost:8080/
-- **Admin Login**: http://localhost:8080/login?admin=true
-- **Admin Signup**: http://localhost:8080/signup?admin=true
-- **Admin Dashboard**: http://localhost:8080/dashboard (after login)
+- **Main Application**: http://localhost:5173/
+- **Admin Login**: http://localhost:5173/login?admin=true
+- **Admin Signup**: http://localhost:5173/signup?admin=true
+- **Admin Dashboard**: http://localhost:5173/dashboard (after login)
 
 ### Demo Credentials
 ```
@@ -170,8 +175,11 @@ Password: Test123!
 ## 📁 Project Structure
 
 ```
-journeyhub-admin-main/
+Travel Agency/
 ├── public/                     # Static assets
+│   ├── favicon.ico
+│   ├── placeholder.svg
+│   └── robots.txt
 ├── server/                     # Backend application
 │   ├── models/                 # MongoDB models
 │   │   ├── User.js            # User model
@@ -181,33 +189,59 @@ journeyhub-admin-main/
 │   ├── validators.js          # Zod validation schemas
 │   └── package.json           # Backend dependencies
 ├── src/                       # Frontend application
+│   ├── assets/                # Images and static files
+│   │   ├── dubai-burj-khalifa.jpg
+│   │   ├── hero-airplane-wing.jpg
+│   │   ├── paris-eiffel-tower.jpg
+│   │   └── taj-mahal-agra.jpg
 │   ├── components/            # React components
 │   │   ├── ui/               # shadcn/ui components
 │   │   ├── Header.tsx        # Navigation header
 │   │   ├── Hero.tsx          # Landing page hero
-│   │   └── ...               # Other components
+│   │   ├── AboutSection.tsx  # About section
+│   │   ├── DestinationsSection.tsx # Destinations showcase
+│   │   ├── TestimonialsSection.tsx # Testimonials display
+│   │   ├── PartnerLogos.tsx  # Partner logos
+│   │   └── Footer.tsx        # Footer component
 │   ├── pages/                # Page components
 │   │   ├── Dashboard.tsx     # Admin dashboard
+│   │   ├── Index.tsx         # Main landing page
+│   │   ├── TravelLanding.tsx # Travel landing component
 │   │   ├── Login.tsx         # Login page
 │   │   ├── Signup.tsx        # Signup page
 │   │   ├── Destinations.tsx  # Destinations management
-│   │   └── Testimonials.tsx  # Testimonials management
+│   │   ├── Destinations-new.tsx # New destinations page
+│   │   ├── Testimonials.tsx  # Testimonials management
+│   │   ├── Testimonials-new.tsx # New testimonials page
+│   │   └── NotFound.tsx      # 404 page
 │   ├── contexts/             # React contexts
+│   │   └── AuthContext.tsx   # Authentication context
 │   ├── hooks/                # Custom hooks
+│   │   ├── use-mobile.tsx    # Mobile detection
+│   │   └── use-toast.ts      # Toast notifications
 │   ├── lib/                  # Utility functions
+│   │   └── utils.ts          # Common utilities
 │   └── main.tsx              # App entry point
 ├── index.html                # HTML template
 ├── package.json              # Frontend dependencies
 ├── vite.config.ts            # Vite configuration
 ├── tailwind.config.ts        # Tailwind configuration
-└── tsconfig.json             # TypeScript configuration
+├── tsconfig.json             # TypeScript configuration
+├── tsconfig.app.json         # App TypeScript config
+├── tsconfig.node.json        # Node TypeScript config
+├── eslint.config.js          # ESLint configuration
+├── postcss.config.js         # PostCSS configuration
+├── components.json           # shadcn/ui components config
+├── bun.lockb                 # Bun lock file
+├── test-auth.js              # Authentication test file
+└── README.md                 # Project documentation
 ```
 
 ## 🎯 Key Features Explained
 
 ### Admin Authentication
-- Secure signup/login system with admin role
-- JWT tokens stored in httpOnly cookies
+- Secure signup/login system with admin role verification
+- JWT tokens stored in httpOnly cookies for security
 - Protected routes requiring authentication
 - Session management with automatic logout
 
@@ -232,15 +266,31 @@ journeyhub-admin-main/
 
 ## 🔧 Development Scripts
 
+### Frontend Scripts
 ```bash
-# Frontend scripts
-npm run dev          # Start development server
+# Development
+npm run dev          # Start development server (port 5173)
 npm run build        # Build for production
+npm run build:dev    # Build in development mode
 npm run preview      # Preview production build
 npm run lint         # Run ESLint
+npm run server       # Install and start backend server
 
-# Backend scripts
-node index.js        # Start server
+# Alternative with yarn
+yarn dev             # Start development server
+yarn build           # Build for production
+yarn lint            # Run ESLint
+
+# Alternative with bun
+bun run dev          # Start development server
+bun run build        # Build for production
+bun run lint         # Run ESLint
+```
+
+### Backend Scripts
+```bash
+# In the server directory
+node index.js        # Start server (port 4000)
 npm start           # Start server (if npm start script exists)
 ```
 
@@ -285,7 +335,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 **Frontend won't start:**
 - Run `npm install` to install dependencies
 - Check if backend is running on port 4000
-- Ensure port 8080 is available
+- Ensure port 5173 is available
 
 **Database connection issues:**
 - Verify MongoDB Atlas connection string
